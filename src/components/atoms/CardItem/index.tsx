@@ -6,7 +6,7 @@ export default function CardItem({ image, name, price, discount, desc }: Readonl
   const Details: React.FC<React.HTMLAttributes<HTMLDivElement>> = desc
   const discountPrice = Math.round(Math.abs(((discount - price) / price) * 100))
   return (
-    <div className="shadow-card rounded-lg overflow-hidden relative flex flex-row">
+    <div className="shadow-card rounded-lg overflow-hidden relative flex md:flex-row flex-col">
       <div className="bg-slate-300 relative">
         {discount > 0 && (
           <div className="w-10 h-10 rounded-full bg-red-700 justify-center items-center flex text-white text-xs absolute -top-2 -left-2">

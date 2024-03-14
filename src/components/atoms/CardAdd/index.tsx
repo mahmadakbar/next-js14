@@ -21,17 +21,27 @@ export default function CardAdd({ data }: { data: ProductList }) {
       total: price * quantity,
     }
 
-    const chartt = dataChart.dataChart
+    const chartt = [...dataChart.dataChart]
+    const findIndx = chartt.findIndex(item => item.id === data.id)
 
-    dispatch(setDataChart([...chartt, payload]))
+    if (findIndx > -1) {
+      chartt[findIndx] = payload
+    } else {
+      chartt.push(payload)
+    }
+
+    dispatch(setDataChart(chartt))
   }
 
   const checkCart = () => {
+    const chartt = dataChart.dataChart
+    const findIndx = chartt.findIndex(item => item.id === data.id)
+    console.log(chartt[findIndx])
     console.log(dataChart.dataChart)
   }
 
   return (
-    <div className="shadow-card rounded-lg overflow-hidden relative p-5 w-full">
+    <div className="shadow-card rounded-lg overflow-hidden relative p-5 w-full h-fit">
       <div className="flex justify-center gap-2 items-center border">
         <button className="bg-slate-400 p-2 flex-1" onClick={() => quantity > 1 && setQuantity(quantity - 1)}>
           -
