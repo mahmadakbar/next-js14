@@ -2,18 +2,18 @@ import CardAdd from '@components/atoms/CardAdd'
 import CardItem from '@components/atoms/CardItem'
 import { ProductItem } from '@interfaces'
 import PRODUCT from '@utils/dummy'
-
 type ItemType = {
   params: { item: string }
 }
 
 export function generateMetadata({ params: { item } }: ItemType) {
+  const dataItem = PRODUCT.find(product => product.id === item) as ProductItem
   return {
-    title: `User ${item}`,
+    title: `User ${dataItem.name}`,
   }
 }
 
-export default function Item({ params: { item } }: Readonly<{ params: { item: string } }>) {
+export default function Product({ params: { item } }: Readonly<{ params: { item: string } }>) {
   const dataItem = PRODUCT.find(product => product.id === item) as ProductItem
   const dataOnly = { ...dataItem } as any
   delete dataOnly.desc

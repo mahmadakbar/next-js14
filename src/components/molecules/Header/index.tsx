@@ -1,4 +1,4 @@
-import CartMenu from '@components/atoms/CartMenu'
+import ChartMenu from '@components/atoms/ChartMenu'
 import Whistlist from '@components/atoms/Whistlist'
 import Link from 'next/link'
 
@@ -11,7 +11,7 @@ export default function Header() {
 
       <div className="flex gap-7 items-center">
         <Whistlist />
-        <CartMenu />
+        <ChartMenu />
       </div>
     </header>
   )
