@@ -1,3 +1,10 @@
+import ListChart from '@components/molecules/ListChart'
+
 export default function Chart() {
-  return <div className="min-h-screen flex">Cart</div>
+  // const dataItem = PRODUCT.find(product => product.id === item) as ProductItem
+  return (
+    <div className="min-h-screen flex">
+      <ListChart />
+    </div>
+  )
 }

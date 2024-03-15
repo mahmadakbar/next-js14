@@ -9,7 +9,7 @@ type ItemType = {
 export function generateMetadata({ params: { item } }: ItemType) {
   const dataItem = PRODUCT.find(product => product.id === item) as ProductItem
   return {
-    title: `User ${dataItem.name}`,
+    title: dataItem.name,
   }
 }
 

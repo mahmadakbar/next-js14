@@ -34,10 +34,10 @@ export default function CardAdd({ data }: { data: ProductList }) {
   }
 
   const checkCart = () => {
-    const chartt = dataChart.dataChart
-    const findIndx = chartt.findIndex(item => item.id === data.id)
-    console.log(chartt[findIndx])
-    console.log(dataChart.dataChart)
+    // const chartt = dataChart.dataChart
+    // const findIndx = chartt.findIndex(item => item.id === data.id)
+    // console.log(chartt[findIndx])
+    // console.log(dataChart.dataChart)
   }
 
   return (
